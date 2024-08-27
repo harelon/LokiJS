@@ -559,6 +559,10 @@
       },
 
       $regex: function (a, b) {
+        if(Array.isArray(a))
+        {
+          return a.some(item => b.test(item));
+        }
         return b.test(a);
       },
 
